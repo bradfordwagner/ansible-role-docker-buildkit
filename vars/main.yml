@@ -1,10 +1,14 @@
 ---
-# vars file for azure-blob-cli
-abc_platform: '{{ ansible_system }}_{{ abc_ansible_arch_to_download_arch[ansible_architecture] }}'
-abc_tgz: abc_{{ abc_ver }}_{{ abc_platform }}.tar.gz
-abc_tmp_tgz: /tmp/{{ abc_tgz }}
-abc_url: '{{ abc_mirror }}/{{ abc_ver }}/go-azure-blob-cli_{{ abc_ver }}_{{ abc_platform }}.tar.gz'
-abc_checksum: '{{ abc_checksums[abc_ver][abc_platform] }}'
-abc_install_dir: '{{ abc_parent_install_dir }}/go-azure-blob-cli-{{ abc_ver }}'
-abc_installed_exe: '{{ abc_install_dir }}/abc'
-abc_installed_link: '{{ abc_parent_install_dir }}/bin/abc'
+
+# amd64, arm64, etc
+bk_arch: '{{ bk_ansible_arch_to_download_arch[ansible_architecture] }}'
+# ex: buildkit-v0.12.5.darwin-amd64.tar.gz
+bk_file_name: buildkit-{{ bk_ver }}.{{ ansible_system | lower }}-{{ bk_arch }}
+bk_tar: '{{ bk_file_name }}.tar.gz'
+bk_sbom: '{{ bk_file_name }}.sbom.json'
+
+bk_url: '{{ bk_mirror }}/{{ bk_ver }}'
+bk_sbom_url: '{{ bk_url }}/{{ bk_sbom }}'
+
+# file name
+bk_install_dir: '{{ bk_parent_install_dir }}/buildkit-{{ bk_ver }}'
