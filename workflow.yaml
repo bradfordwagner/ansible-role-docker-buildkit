@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Workflow
 metadata:
-  generateName: ansible-role-template-
+  generateName: ansible-role-docker-buildkit-
 spec:
   podGC:
     strategy: OnPodSuccess # delete pods when workflow is successful
@@ -27,7 +27,7 @@ spec:
         arguments:
           parameters:
           - name: git_repo
-            value: https://github.com/bradfordwagner/gh-template-ansible-role
+            value: https://github.com/bradfordwagner/ansible-role-docker-buildkit.git
           - name: git_version
             value: "{{ inputs.parameters.git_version }}"
           - name: upstream_repo
