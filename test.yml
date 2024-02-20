@@ -3,8 +3,8 @@
   roles:
     - role: '{{ playbook_dir }}'
   tasks:
-    # - command: /usr/local/bin/abc
-    #   register: abc_test_output
-    # - name: assert binary prints help output
-    #   debug:
-    #     msg: '{{ abc_test_output.stdout }}'
+    - command: /usr/local/bin/buildctl
+      register: output
+    - name: assert binary prints help output
+      debug:
+        msg: '{{ output.stdout }}'

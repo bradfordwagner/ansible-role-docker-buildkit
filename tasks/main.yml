@@ -10,7 +10,7 @@
 - when: not install_dir.stat.exists
   block:
     # create bk_install_dir
-    - name: mkdir {{ bk_install_dir }}
+    - name: mkdir
       file: 
         path: '{{ item }}'
         state: directory

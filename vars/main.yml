@@ -7,7 +7,9 @@ bk_file_name: buildkit-{{ bk_ver }}.{{ ansible_system | lower }}-{{ bk_arch }}
 bk_tar: '{{ bk_file_name }}.tar.gz'
 bk_sbom: '{{ bk_file_name }}.sbom.json'
 
+# https://github.com/moby/buildkit/releases/download/v0.12.5
 bk_url: '{{ bk_mirror }}/{{ bk_ver }}'
+# https://github.com/moby/buildkit/releases/download/v0.12.5/buildkit-v0.12.5.linux-amd64.sbom.json
 bk_sbom_url: '{{ bk_url }}/{{ bk_sbom }}'
 
 # parent install dir (user or system)
