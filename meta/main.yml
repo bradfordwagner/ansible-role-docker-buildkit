@@ -1,11 +1,11 @@
 galaxy_info:
-  role_name: azure_blob_cli
+  role_name: docker_buildkit
   author: Bradford Wagner
-  description: installs azure blob cli (abc)
+  description: installs docker buildkit
   company: Blackrock Financial Management
   license: Apache-2.0
   min_ansible_version: 2.1
-  galaxy_tags: [azure, blob]
+  galaxy_tags: [docker, buildkit]
 
 dependencies:
-  - andrewrothstein.unarchive-deps
+  - andrewrothstein.unarchivedeps
