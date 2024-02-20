@@ -1,9 +1,14 @@
 ---
-# defaults file for azure-blob-cli
 bk_ver: v0.12.5
-bk_parent_install_dir: /usr/local
 bk_mirror: https://github.com/moby/buildkit/releases/download
 bk_timeout_seconds: 300
+bk_secure: true
+
+# can be user or system
+bk_user_type: system
+bk_parent_install_dir:
+  user: '{{ ansible_env.HOME }}/.local'
+  system: /usr/local
 
 bk_ansible_arch_to_download_arch:
   x86_64: amd64

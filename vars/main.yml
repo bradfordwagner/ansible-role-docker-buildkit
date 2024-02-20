@@ -10,5 +10,16 @@ bk_sbom: '{{ bk_file_name }}.sbom.json'
 bk_url: '{{ bk_mirror }}/{{ bk_ver }}'
 bk_sbom_url: '{{ bk_url }}/{{ bk_sbom }}'
 
-# file name
-bk_install_dir: '{{ bk_parent_install_dir }}/buildkit-{{ bk_ver }}'
+# parent install dir (user or system)
+bk_resolved_parent_dir: '{{ bk_parent_install_dir[ bk_user_type ] }}'
+
+# install dirs (version specific): 
+# /root/.local/bin/buildkit-v0.12.5,/usr/local/buildkit-v0.12.5
+bk_install_dir: '{{ bk_resolved_parent_dir }}/buildkit-{{ bk_ver }}'
+
+# archive download location: 
+# /root/.local/bin/buildkit-v0.12.5/buildkit-v0.12.5.linux-amd64.tar.gz
+bk_archive: '{{ bk_install_dir }}/{{ bk_tar }}'
+
+# link dir: /root/.local/bin/ 
+bk_link_dir: '{{ bk_resolved_parent_dir }}/bin/'
