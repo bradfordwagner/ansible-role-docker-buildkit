@@ -1,5 +1,5 @@
 ---
-bk_ver: v0.12.5
+bk_ver: v0.19.0
 bk_mirror: https://github.com/moby/buildkit/releases/download
 bk_timeout_seconds: 300
 bk_secure: true
