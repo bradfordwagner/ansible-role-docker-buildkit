@@ -1,4 +1,5 @@
 ---
+# renovate: datasource=github-releases depName=moby/buildkit
 bk_ver: v0.34.1
 bk_mirror: https://github.com/moby/buildkit/releases/download
 bk_timeout_seconds: 300
